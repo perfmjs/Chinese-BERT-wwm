@@ -9,7 +9,11 @@ For further accelerating Chinese natural language processing, we provide **Chine
 
 
 ## News
-**2019/10/14 We release `RoBERTa-wwm-ext-large`, check [Download](#Download)**
+**2020/1/20 Happy Chinese New Year! We've released RBT3 and RBTL3 (3-layer RoBERTa-wwm-ext-base/large), check [Small Models](#Small-Models)**
+
+2019/12/19 The models in this repository now can be easily accessed through [Huggingface-Transformers](https://github.com/huggingface/transformers), check [Quick Load](#Quick-Load)
+
+2019/10/14 We release `RoBERTa-wwm-ext-large`, check [Download](#Download)
 
 2019/9/10 We release `RoBERTa-wwm-ext`, check [Download](#Download)
 
@@ -25,6 +29,7 @@ For further accelerating Chinese natural language processing, we provide **Chine
 | [Download](#Download) | Download links for Chinese BERT-wwm |
 | [Model Comparison](#Model-Comparison) | Compare the models published in this repository |
 | [Baselines](#Baselines) | Baseline results for several Chinese NLP datasets (partial) |
+| [Small Models](#Small-Models) | 3-layer Transformer models |
 | [Useful Tips](#Useful-Tips) | Provide several useful tips for using Chinese pre-trained models |
 | [English BERT-wwm](#English-BERT-wwm) | Download English BERT-wwm (by Google) |
 | [FAQ](#FAQ) | Frequently Asked Questions |
@@ -65,10 +70,12 @@ As all models are 'BERT-base' variants, we do not incidate 'base' in the followi
 
 | Model | Data | Google Drive | iFLYTEK Cloud |
 | :------- | :--------- | :---------: | :---------: |
+| **`RBTL3, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1Jzn1hYwmv0kXkfTeIvNT61Rn1IbRc-o8)**<br/>**[PyTorch](https://drive.google.com/open?id=1qs5OasLXXjOnR2XuGUh12NanUl0pkjEv)** | **[TensorFlow（pw:vySW）](https://pan.iflytek.com:443/link/0DD18FAC080BAF75DBA28FB5C0047760)**<br/>**[PyTorch（pw:rgCs）](https://pan.iflytek.com:443/link/7C6A513BED2D42170B6DBEE5A866FB3F)** |
+| **`RBT3, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1-rvV0nBDvRCASbRz8M9Decc3_8Aw-2yi)**<br/>**[PyTorch](https://drive.google.com/open?id=1_LqmIxm8Nz1Abvlqb8QFZaxYo-TInOed)** | **[TensorFlow（pw:b9nx）](https://pan.iflytek.com:443/link/275E5B46185C982D4AF5AC295E1651B6)**<br/>**[PyTorch（pw:Yoep）](https://pan.iflytek.com:443/link/A094EB0A73B1E7209FEBC6C5CF7AEF27)** |
 | **`RoBERTa-wwm-ext-large, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **[TensorFlow（pw:u6gC）](https://pan.iflytek.com:443/link/AC056611607108F33A744A0F56D0F6BE)**<br/>**[PyTorch（pw:43eH）](https://pan.iflytek.com:443/link/9B46A0ABA70C568AAAFCD004B9A2C773)** |
-| **`RoBERTa-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** | **[TensorFlow（pw:peMe）](https://pan.iflytek.com:443/link/A136858D5F529E7C385C73EEE336F27B)** |
-| **`BERT-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（pw:thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（pw:bJns）](https://pan.iflytek.com:443/link/4AB35DEBECB79C578BEC9952F78FB6F2)** |
-| **`BERT-wwm, Chinese`** | **Wikipedia** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（pw:mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（pw:8fX5）](https://pan.iflytek.com:443/link/8D4E8680433E6AD0F33D521EA920348E)** |
+| **`RoBERTa-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** <br/>**[PyTorch](https://drive.google.com/open?id=1eHM3l4fMo6DsQYGmey7UZGiTmQquHw25)** | **[TensorFlow（pw:Xe1p）](https://pan.iflytek.com:443/link/98D11FAAF0F0DBCB094EE19CCDBC98BF)** <br/>**[PyTorch（pw:waV5）](https://pan.iflytek.com:443/link/92ADD2C34C91F3B44E0EC97F101F89D8)**|
+| **`BERT-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（pw:4cMG）](https://pan.iflytek.com:443/link/653637473FFF242C3869D77026C9BDB5)** <br/>**[PyTorch（pw:XHu4）](https://pan.iflytek.com:443/link/B9ACE1C9F228A0F42242672EF6CE1721)** |
+| **`BERT-wwm, Chinese`** | **Wikipedia** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（pw:07Xj）](https://pan.iflytek.com:443/link/A2483AD206EF85FD91569B498A3C3879)** <br/>**[PyTorch（pw:hteX）](https://pan.iflytek.com:443/link/5DBDD89414E5B565D3322D6B7937DF47)** |
 | `BERT-base, Chinese`<sup>Google</sup> | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
 | `BERT-base, Multilingual Cased`<sup>Google</sup>  | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
 | `BERT-base, Multilingual Uncased`<sup>Google</sup>  | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip) | - |
@@ -87,7 +94,27 @@ chinese_wwm_L-12_H-768_A-12.zip
 `bert_config.json` and `vocab.txt` are identical to the original **`BERT-base, Chinese`** by Google。
 
 
-#### Task Data
+### Quick Load
+With [Huggingface-Transformers](https://github.com/huggingface/transformers), the models above could be easily accessed and loaded through the following codes.
+```
+tokenizer = BertTokenizer.from_pretrained("MODEL_NAME")
+model = BertModel.from_pretrained("MODEL_NAME")
+```
+**Notice: Please use BertTokenizer and BertModel for loading these model. DO NOT use RobertaTokenizer/RobertaModel!**
+
+The actual model and its `MODEL_NAME` are listed below.
+
+| Original Model | MODEL_NAME |
+| - | - |
+| RoBERTa-wwm-ext-large | hfl/chinese-roberta-wwm-ext-large |
+| RoBERTa-wwm-ext | hfl/chinese-roberta-wwm-ext |
+| BERT-wwm-ext | hfl/chinese-bert-wwm-ext |
+| BERT-wwm | hfl/chinese-bert-wwm |
+| RBT3 | hfl/rbt3 |
+| RBTL3 | hfl/rbtl3 |
+
+
+### Task Data
 We only provide the data that is publically available, check `data` directory.
 
 
@@ -113,6 +140,21 @@ We list comparisons on the models that were released in this project.
 We experiment on several Chinese datasets, including sentence-level to document-level tasks.
 
 **We only list partial results here and kindly advise the readers to read our [technical report](https://arxiv.org/abs/1906.08101).**
+
+Best Learning Rate:  
+
+| Model | BERT | ERNIE | BERT-wwm* |
+| :------- | :---------: | :---------: | :---------: |
+| CMRC 2018 | 3e-5 | 8e-5 | 3e-5 |
+| DRCD | 3e-5 | 8e-5 | 3e-5 |
+| CJRC | 4e-5 | 8e-5 | 4e-5 |
+| XNLI | 3e-5 | 5e-5 | 3e-5 |
+| ChnSentiCorp | 2e-5 | 5e-5 | 2e-5 |
+| LCQMC  | 2e-5 | 3e-5 | 2e-5 |
+| BQ Corpus | 3e-5 | 5e-5 | 3e-5 |
+| THUCNews | 2e-5 | 5e-5 | 2e-5 |
+* represents all related models (BERT-wwm, BERT-wwm-ext, RoBERTa-wwm-ext, RoBERTa-wwm-ext-large)
+
 
 - [**CMRC 2018**：Span-Extraction Machine Reading Comprehension (Simplified Chinese)](https://github.com/ymcui/cmrc2018)
 - [**DRCD**：Span-Extraction Machine Reading Comprehension (Traditional Chinese)](https://github.com/DRCSolutionService/DRCD)
@@ -237,7 +279,34 @@ Evaluation Metrics: Accuracy
 | **RoBERTa-wwm-ext** | 98.3 (97.9) | 97.7 (97.5) |
 | **RoBERTa-wwm-ext-large** | 98.3 (97.7) | 97.8 (97.6) |
 
-</details>
+### Small Models
+We list RBT3 and RBTL3 results on several NLP tasks. Note that, we only list test set results.
+
+| Model | CMRC 2018 | DRCD | XNLI | CSC | LCQMC | BQ | Average | Params | 
+| :------- | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | 
+| RoBERTa-wwm-ext-large | 74.2 / 90.6 | 89.6 / 94.5 | 81.2 | 95.8 | 87.0 | 85.8 | 87.335 | 325M |
+| RoBERTa-wwm-ext | 72.6 / 89.4 | 85.6 / 92.0 | 78.8 | 95.6 | 86.4 | 85.0 | 85.675 | 102M |
+| RBTL3 | 63.3 / 83.4 | 77.2 / 85.6 | 74.0 | 94.2 | 85.1 | 83.6 | 80.800 | 61M (59.8%) | 
+| RBT3 | 62.2 / 81.8 | 75.0 / 83.9 | 72.3 | 92.8 | 85.1 | 83.3 | 79.550 | 38M (37.3%) | 
+
+Relative performance:
+
+| Model | CMRC 2018 | DRCD | XNLI | CSC | LCQMC | BQ | Average | AVG-C |
+| :------- | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+| RoBERTa-wwm-ext-large | 102.2% / 101.3% | 104.7% / 102.7% | 103.0% | 100.2% | 100.7% | 100.9% | 101.9% | 101.2% |
+| RoBERTa-wwm-ext | 100% / 100% | 100% / 100% | 100% | 100% | 100% | 100% | 100% | 100% | 
+| RBTL3 | 87.2% / 93.3% | 90.2% / 93.0% | 93.9% | 98.5% | 98.5% | 98.4% | 94.3% | 97.35% |
+| RBT3 | 85.7% / 91.5% | 87.6% / 91.2% | 91.8% | 97.1% | 98.5% | 98.0% | 92.9% | 96.35% |
+
+* AVG-C: average score of classification tasks: XNLI, CSC, LCQMC, BQ
+
+- The numbers of parameter are calculated based on XNLI classification task.
+- Relative parameter percentage is calculated based on RoBERTa-wwm-ext model.
+- RBT3: We use RoBERTa-wwm-ext for initializing the first three layers, and continue to train 1M steps.
+- RBTL3: We use RoBERTa-wwm-ext-large for initializing the first three layers, and continue to train 1M steps.
+- The name of RBT is the syllables of 'RoBERTa', and 'L' stands for large model.
+- Directly using the first three layers of RoBERTa-wwm-ext-large to fine-tune the downstream task will result in a bad performance. For example, in CMRC 2018 task we could only achieve 42.9/65.3, while RBTL3 could reach 63.3/83.4.
+
 
 ## Useful Tips
 * Initial learning rate is the most important hyper-parameters (regardless of BERT or other neural networks), and should ALWAYS be tuned for better performance.

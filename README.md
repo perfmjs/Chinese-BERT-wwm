@@ -8,16 +8,15 @@
 
 ![./pics/header.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/header.png)
 
-**微信公众号文章介绍**
-
-- 哈工大讯飞联合实验室：https://mp.weixin.qq.com/s/EE6dEhvpKxqnVW_bBAKrnA
-- 机器之心：https://mp.weixin.qq.com/s/88OwaHqnrVMQ7vH98INA3w
-
 本项目基于谷歌官方的BERT：https://github.com/google-research/bert
 
 
 ## 新闻
-**2019/10/14 发布萝卜塔RoBERTa-wwm-ext-large模型，查看[中文模型下载](#中文模型下载)**
+**2020/1/20 祝大家鼠年大吉，本次发布了RBT3、RBTL3（3层RoBERTa-wwm-ext-base/large），查看[小参数量模型](#小参数量模型)**
+
+2019/12/19 本目录发布的模型已接入[Huggingface-Transformers](https://github.com/huggingface/transformers)，查看[快速加载](#快速加载)
+
+2019/10/14 发布萝卜塔RoBERTa-wwm-ext-large模型，查看[中文模型下载](#中文模型下载)
 
 2019/9/10 发布萝卜塔RoBERTa-wwm-ext模型，查看[中文模型下载](#中文模型下载)
 
@@ -33,6 +32,7 @@
 | [中文模型下载](#中文模型下载) | 提供了BERT-wwm的下载地址 |
 | [模型对比](#模型对比) | 提供了本目录中模型的参数对比 |
 | [中文基线系统效果](#中文基线系统效果) | 列举了部分中文基线系统效果 |
+| [new 小参数量模型](#小参数量模型) | 列举了小参数量模型（3层Transformer）的效果 |
 | [使用建议](#使用建议) | 提供了若干使用中文预训练模型的建议 |
 | [英文模型下载](#英文模型下载) | 谷歌官方的英文BERT-wwm下载地址 |
 | [FAQ](#FAQ) | 常见问题答疑 |
@@ -69,10 +69,12 @@
 
 | 模型简称 | 语料 | Google下载 | 讯飞云下载 |
 | :------- | :--------- | :---------: | :---------: |
+| **`RBTL3, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1Jzn1hYwmv0kXkfTeIvNT61Rn1IbRc-o8)**<br/>**[PyTorch](https://drive.google.com/open?id=1qs5OasLXXjOnR2XuGUh12NanUl0pkjEv)** | **[TensorFlow（密码vySW）](https://pan.iflytek.com:443/link/0DD18FAC080BAF75DBA28FB5C0047760)**<br/>**[PyTorch（密码rgCs）](https://pan.iflytek.com:443/link/7C6A513BED2D42170B6DBEE5A866FB3F)** |
+| **`RBT3, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1-rvV0nBDvRCASbRz8M9Decc3_8Aw-2yi)**<br/>**[PyTorch](https://drive.google.com/open?id=1_LqmIxm8Nz1Abvlqb8QFZaxYo-TInOed)** | **[TensorFlow（密码b9nx）](https://pan.iflytek.com:443/link/275E5B46185C982D4AF5AC295E1651B6)**<br/>**[PyTorch（密码Yoep）](https://pan.iflytek.com:443/link/A094EB0A73B1E7209FEBC6C5CF7AEF27)** |
 | **`RoBERTa-wwm-ext-large, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **[TensorFlow（密码u6gC）](https://pan.iflytek.com:443/link/AC056611607108F33A744A0F56D0F6BE)**<br/>**[PyTorch（密码43eH）](https://pan.iflytek.com:443/link/9B46A0ABA70C568AAAFCD004B9A2C773)** |
-| **`RoBERTa-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** <br/>**[PyTorch](https://drive.google.com/open?id=1eHM3l4fMo6DsQYGmey7UZGiTmQquHw25)** | **[TensorFlow（密码peMe）](https://pan.iflytek.com:443/link/A136858D5F529E7C385C73EEE336F27B)** <br/>**[PyTorch（密码6kpJ）](https://pan.iflytek.com:443/link/2F25AD577CC47EA9CCFC3A038AF29429)**|
-| **`BERT-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（密码thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（密码bJns）](https://pan.iflytek.com:443/link/4AB35DEBECB79C578BEC9952F78FB6F2)** |
-| **`BERT-wwm, Chinese`** | **中文维基** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（密码mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（密码8fX5）](https://pan.iflytek.com:443/link/8D4E8680433E6AD0F33D521EA920348E)** |
+| **`RoBERTa-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** <br/>**[PyTorch](https://drive.google.com/open?id=1eHM3l4fMo6DsQYGmey7UZGiTmQquHw25)** | **[TensorFlow（密码Xe1p）](https://pan.iflytek.com:443/link/98D11FAAF0F0DBCB094EE19CCDBC98BF)** <br/>**[PyTorch（密码waV5）](https://pan.iflytek.com:443/link/92ADD2C34C91F3B44E0EC97F101F89D8)**|
+| **`BERT-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（密码4cMG）](https://pan.iflytek.com:443/link/653637473FFF242C3869D77026C9BDB5)** <br/>**[PyTorch（密码XHu4）](https://pan.iflytek.com:443/link/B9ACE1C9F228A0F42242672EF6CE1721)** |
+| **`BERT-wwm, Chinese`** | **中文维基** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（密码07Xj）](https://pan.iflytek.com:443/link/A2483AD206EF85FD91569B498A3C3879)** <br/>**[PyTorch（密码hteX）](https://pan.iflytek.com:443/link/5DBDD89414E5B565D3322D6B7937DF47)** |
 | `BERT-base, Chinese`<sup>Google</sup> | 中文维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
 | `BERT-base, Multilingual Cased`<sup>Google</sup>  | 多语种维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
 | `BERT-base, Multilingual Uncased`<sup>Google</sup>  | 多语种维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip) | - |
@@ -94,6 +96,26 @@ chinese_wwm_L-12_H-768_A-12.zip
 ```
 其中`bert_config.json`和`vocab.txt`与谷歌原版`BERT-base, Chinese`完全一致。
 PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件。
+
+
+### 快速加载
+依托于[Huggingface-Transformers 2.2.2](https://github.com/huggingface/transformers)，可轻松调用以上模型。
+```
+tokenizer = BertTokenizer.from_pretrained("MODEL_NAME")
+model = BertModel.from_pretrained("MODEL_NAME")
+```
+**注意：本目录中的所有模型均使用BertTokenizer以及BertModel加载，请勿使用RobertaTokenizer/RobertaModel！**
+
+其中`MODEL_NAME`对应列表如下：
+
+| 模型名 | MODEL_NAME |
+| - | - |
+| RoBERTa-wwm-ext-large | hfl/chinese-roberta-wwm-ext-large |
+| RoBERTa-wwm-ext | hfl/chinese-roberta-wwm-ext |
+| BERT-wwm-ext | hfl/chinese-bert-wwm-ext |
+| BERT-wwm | hfl/chinese-bert-wwm |
+| RBT3 | hfl/rbt3 |
+| RBTL3 | hfl/rbtl3 |
 
 
 ### 测试任务数据
@@ -127,6 +149,22 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ## 中文基线系统效果
 为了对比基线效果，我们在以下几个中文数据集上进行了测试，包括`句子级`和`篇章级`任务。
 对于`BERT-wwm-ext`、`RoBERTa-wwm-ext`、`RoBERTa-wwm-ext-large`，我们**没有进一步调整最佳学习率**，而是直接使用了`BERT-wwm`的最佳学习率。
+
+最佳学习率：  
+
+| 模型 | BERT | ERNIE | BERT-wwm* |
+| :------- | :---------: | :---------: | :---------: |
+| CMRC 2018 | 3e-5 | 8e-5 | 3e-5 |
+| DRCD | 3e-5 | 8e-5 | 3e-5 |
+| CJRC | 4e-5 | 8e-5 | 4e-5 |
+| XNLI | 3e-5 | 5e-5 | 3e-5 |
+| ChnSentiCorp | 2e-5 | 5e-5 | 2e-5 |
+| LCQMC  | 2e-5 | 3e-5 | 2e-5 |
+| BQ Corpus | 3e-5 | 5e-5 | 3e-5 |
+| THUCNews | 2e-5 | 5e-5 | 2e-5 |
+
+*代表所有wwm系列模型 (BERT-wwm, BERT-wwm-ext, RoBERTa-wwm-ext, RoBERTa-wwm-ext-large)
+
 
 **下面仅列举部分结果，完整结果请查看我们的[技术报告](https://arxiv.org/abs/1906.08101)。**
 
@@ -263,6 +301,33 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | **RoBERTa-wwm-ext-large** | 98.3 (97.7) | 97.8 (97.6) |
 
 
+### 小参数量模型
+以下是在若干NLP任务上的实验效果，表中只提供测试集结果对比。
+
+| 模型 | CMRC 2018 | DRCD | XNLI | CSC | LCQMC | BQ | 平均 | 参数量 | 
+| :------- | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | 
+| RoBERTa-wwm-ext-large | 74.2 / 90.6 | 89.6 / 94.5 | 81.2 | 95.8 | 87.0 | 85.8 | 87.335 | 325M |
+| RoBERTa-wwm-ext | 72.6 / 89.4 | 85.6 / 92.0 | 78.8 | 95.6 | 86.4 | 85.0 | 85.675 | 102M |
+| RBTL3 | 63.3 / 83.4 | 77.2 / 85.6 | 74.0 | 94.2 | 85.1 | 83.6 | 80.800 | 61M (59.8%) | 
+| RBT3 | 62.2 / 81.8 | 75.0 / 83.9 | 72.3 | 92.8 | 85.1 | 83.3 | 79.550 | 38M (37.3%) | 
+
+效果相对值比较：
+
+| 模型 | CMRC 2018 | DRCD | XNLI | CSC | LCQMC | BQ | 平均 | 分类平均 |
+| :------- | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+| RoBERTa-wwm-ext-large | 102.2% / 101.3% | 104.7% / 102.7% | 103.0% | 100.2% | 100.7% | 100.9% | 101.9% | 101.2% |
+| RoBERTa-wwm-ext | 100% / 100% | 100% / 100% | 100% | 100% | 100% | 100% | 100% | 100% | 
+| RBTL3 | 87.2% / 93.3% | 90.2% / 93.0% | 93.9% | 98.5% | 98.5% | 98.4% | 94.3% | 97.35% |
+| RBT3 | 85.7% / 91.5% | 87.6% / 91.2% | 91.8% | 97.1% | 98.5% | 98.0% | 92.9% | 96.35% |
+
+- 参数量是以XNLI分类任务为基准进行计算
+- 括号内参数量百分比以原始base模型（即RoBERTa-wwm-ext）为基准
+- RBT3：由RoBERTa-wwm-ext 3层进行初始化，继续训练了1M步
+- RBTL3：由RoBERTa-wwm-ext-large 3层进行初始化，继续训练了1M步
+- RBT的名字是RoBERTa三个音节首字母组成，L代表large模型
+- 直接使用RoBERTa-wwm-ext-large前三层进行初始化并进行下游任务的训练将显著降低效果，例如在CMRC 2018上测试集仅能达到42.9/65.3，而RBTL3能达到63.3/83.4
+
+
 ## 使用建议
 * 初始学习率是非常重要的一个参数（不论是`BERT`还是其他模型），需要根据目标任务进行调整。
 * `ERNIE`的最佳学习率和`BERT`/`BERT-wwm`相差较大，所以使用`ERNIE`时请务必调整学习率（基于以上实验结果，`ERNIE`需要的初始学习率较高）。
@@ -340,6 +405,7 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
 
 需要注意的是，该模型并非原版RoBERTa模型，只是按照类似RoBERTa训练方式训练出的BERT模型，即RoBERTa-like BERT。
 故在下游任务使用、模型转换时请按BERT的方式处理，而非RoBERTa。
+
 
 ## 引用
 如果本目录中的内容对你的研究工作有所帮助，请在文献中引用下述技术报告：
